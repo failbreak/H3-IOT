@@ -3,13 +3,6 @@
 
 
 
-## T.O.C
-* [Intro](#Intro)
-* [Instrucktioner](#Instrucktioner)
-* [Information & tech](#Information-og-tech)
-* [Tags](#Tags)
-* [Changelog](#Changelog)
-
 
 
 
@@ -18,6 +11,14 @@ IOT H3
 Det her projekt handler om et "IoT-styrede hus".
 Der skal laves et Real time clock med display, samt måling og udlæsning af temperatur og luftfugtighed
 
+
+
+## T.O.C
+* [Intro](#Intro)
+* [Instrucktioner](#Instrucktioner)
+* [Information & tech](#Information-og-tech)
+* [Tags](#Tags)
+* [Changelog](#Changelog)
 
 
 
