@@ -7,6 +7,8 @@
 * [Intro](#Intro)
 * [Instrucktioner](#Instrucktioner)
 * [Information & tech](#Information-og-tech)
+* [Tags](#Tags)
+* [Changelog](#Changelog)
 
 
 
