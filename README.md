@@ -6,7 +6,7 @@
 ## T.O.C
 * [Intro](#Intro)
 * [Instrucktioner](*Instrucktioner)
-* [Information & tech](*Information&tech)
+* [Information & tech](*Information-&-tech)
 
 
 
