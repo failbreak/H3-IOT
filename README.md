@@ -1,6 +1,7 @@
 # IOT H3 Programmerings opgave
 
 
+![image](https://github.com/failbreak/H3-IOT/assets/69219123/0fbdc8bb-e2f4-4bfd-a036-0356a9ef3f26)
 
 
 
@@ -40,7 +41,15 @@ Coming Soon....
 
 
 ### Libaries & software
-Coming Soon....
+[Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
+<br/>
+[Adafruit BusIO](https://github.com/adafruit/Adafruit_BusIO)
+<br/>
+[Adafruit-GFX-Library](https://github.com/adafruit/Adafruit-GFX-Library)
+<br/>
+[Arduino](https://www.arduino.cc/en/software)
+<br/>
+[EasyButton](https://easybtn.earias.me)
 
 
 ## Tags
@@ -54,7 +63,9 @@ Coming Soon....
 
 
 
-# To-do
+## To-do
 
 * Coming Soon....
 
+## Contributions
+Elias who helped me understand why and how i did things wrong
