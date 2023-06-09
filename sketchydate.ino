@@ -7,7 +7,6 @@
 #include <EasyButton.h>
 
 
-
 // Easy button
 #define button_pin 9
 #define button_pin2 8
@@ -28,8 +27,9 @@ DHT dht(DHTPIN, DHTTYPE);
 
 // global variables
 int item_sel = 0;
-int totalItems = 1;
-bool menuState;
+int totalItems = 2;
+int menuSelected = 0;
+bool menuState = true;
 //
 
 void setup() {
@@ -48,23 +48,25 @@ if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
 	display.setTextSize(2); // Normal 1:1 pixel scale
 // easy button
 button.begin();
-// button2.begin();
-// button2.onPressed();
-button.onPressed(onPressed);
+button2.begin();
+button.onPressed(menuSelectFunc);
+button2.onPressed(menuActivator);
 if (button.supportsInterrupt())
   {
     button.enableInterrupt(buttonISR);
-    Serial.println("Button will be used through interrupts");
+    Serial.println("Button will be used through interrupts btn1");
+  }
+  if (button2.supportsInterrupt())
+  {
+    button2.enableInterrupt(buttonISR2);
+    Serial.println("Button will be used through interrupts btn2");
   }
 // MenuSelect to make sure it gets called atleast once
 }
 
 void loop() {
 // delay(2000);
-  // Serial.print(F("Humidity: "));
-  // Serial.print(t);
-  Serial.println(" ");
-  menuSelect();
+  // Serial.println(" ");
 
 DateTime now = rtc.now();
   // put your main code here, to run repeatedly:
@@ -72,41 +74,74 @@ DateTime now = rtc.now();
   // appened(&final);
 	display.clearDisplay();
 	display.setTextColor(WHITE); // Draw white text
-  switch(){
-case 0:
+  if(menuState == true){
+  menuSelect();
 	display.setCursor(1,1); // Start at top-left corner
   display.print("Clock");
 	display.setCursor(1,21); // Start at top-left corner
   display.print("Humidity");
+  display.setCursor(1,38); // Start at top-left corner
+  display.print("Temp");
+	display.display();
+  }
+  else {
+  switch(item_sel){
+case 0:
+	display.setCursor(1,1); // Start at top-left corner
+  Serial.println("case 0");
+  display.clearDisplay();
+  clock();
+  display.display();
   break;
   case 1:
-
+	display.setCursor(1,1); // Start at top-left corner
+  Serial.println("case 1");
+ display.clearDisplay();
+  temp();
+  display.display();
   break;
-  
+    case 2:
+	display.setCursor(1,1); // Start at top-left corner
+  Serial.println("case 2");
+ display.clearDisplay();
+  temp();
+  display.display();
+  break;
+
   }
-	display.display();
 	// delay(2000);
 }
-
-
+}
 void menuSelect(){
-  if(menuState){
+  // if(menuState){
    if (item_sel > totalItems) {
    item_sel = 0;
    }
-   if (item_sel != 0) {
-      display.drawRoundRect(0, 19, 140, 18, 2, WHITE);
-      display.drawRoundRect(0, 0, 140, 18, 2, BLACK);
-   }
-   else {
-      display.drawRoundRect(0, 0, 140, 18, 2, WHITE);
+   switch (item_sel) {
+   case 0:
+         display.drawRoundRect(0, 0, 140, 18, 2, WHITE);
       display.drawRoundRect(0, 19, 140, 18, 2, BLACK);
-   }
-  }
-  else{
-    return;
+      display.drawRoundRect(0, 30, 140, 18, 2, BLACK);
+   break;
+   case 1:
+         display.drawRoundRect(0, 19, 140, 18, 2, WHITE);
+      display.drawRoundRect(0, 0, 140, 18, 2, BLACK);
+      display.drawRoundRect(0, 30, 140, 18, 2, BLACK);
+   break;
+   case 2:
+      display.drawRoundRect(0, 37, 140, 18, 2, WHITE);
+       display.drawRoundRect(0, 19, 140, 18, 2, BLACK);
+      display.drawRoundRect(0, 0, 140, 18, 2, BLACK);
+   break;
   }
 }
+
+  
+  // }
+  // else{
+  //   return;
+  // }
+// CLock function
 void clock(){
   DateTime now = rtc.now();
   display.print(now.hour() , DEC);
@@ -116,23 +151,40 @@ void clock(){
   display.print(now.second() , DEC);
   display.println("");
 }
+// temperature
 void temp()
 {
-  float h = dht.readHumidity();
   float t = dht.readTemperature();
   // Read temperature as Fahrenheit (isFahrenheit = true)
-  float f = dht.readTemperature(true);
-  if (isnan(h) || isnan(t) || isnan(f)) {
+  if (isnan(t)) {
     Serial.println(F("Failed to read from DHT sensor!"));
     return;
   }
+  display.print(F("Temperature: c "));
+  display.print(t);
+  delay(2000);
+}
+void hum(){
+  float h = dht.readHumidity();
+if (isnan(h)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+}
 }
 // Easy button functions
 
-void onPressed() {
+void menuSelectFunc() {
     item_sel++;
+}
+void menuActivator(){
+  menuState = !menuState;
+  Serial.println(menuState);
 }
 void buttonISR()
 {
   button.read();
+}
+void buttonISR2()
+{
+  button2.read();
 }
