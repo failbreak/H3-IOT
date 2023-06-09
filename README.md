@@ -71,7 +71,8 @@ the one on the left is scrolling through menu.
 
 
 ## Changelog
-[Github](https://github.com/failbreak/H3-IOT/commit)
+[Github](https://github.com/failbreak/H3-IOT/commit) This goes straight to commits
+<br/>
 v1.0.1: this is a hot fix that fixes clock
 <br/>
 v1.0.0: Time, Humidity and temp added, along with menu.
