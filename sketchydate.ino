@@ -36,7 +36,7 @@ void setup() {
 Serial.begin(9600); 
 // RTC
 rtc.begin();
-rtc.adjust(DateTime(2023,6,8,9,20,40));
+rtc.adjust(DateTime(2023,6,9,10,22,0));
 // dht
 dht.begin();
 // dispaly
@@ -150,6 +150,11 @@ void clock(){
   display.print(":");
   display.print(now.second() , DEC);
   display.println("");
+  display.print(now.day(),DEC);
+  display.print("-");
+  display.print(now.month(),DEC);
+  display.print("-");
+  display.print(now.year(),DEC);
 }
 // temperature
 void temp()
