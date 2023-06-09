@@ -9,9 +9,8 @@
 
 ## Intro
 IOT H3 
-Det her projekt handler om et "IoT-styrede hus".
-Der skal laves et Real time clock med display, samt måling og udlæsning af temperatur og luftfugtighed
-
+This project is about an "IoT controlled house".
+A real time clock with display, as well as measurement and readout of temperature and humidity must be made
 
 
 ## T.O.C
@@ -25,8 +24,10 @@ Der skal laves et Real time clock med display, samt måling og udlæsning af tem
 
 
 ## Instrucktioner
-Coming Soon....
-
+Navigating menu you have 2 buttons.
+the one to the right is enter & back.
+the one on the left is scrolling through menu.
+![IMG_20230609_081724](https://github.com/failbreak/H3-IOT/assets/69219123/2119cea1-296a-4f9b-8813-cdee1b62878d)
 
 
 
@@ -39,8 +40,21 @@ Coming Soon....
 | ------------- | ------------- | ------------- |
 
 
+### Modules
+* SSD1306
+* RTC_DS3231
+* dht11
 
-### Libaries & software
+### Pins
+* #define button_pin 9
+* #define button_pin2 8
+* #define DHTPIN 3
+* #define DHTTYPE DHT11
+
+
+
+
+## Libaries & software
 [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306)
 <br/>
 [Adafruit BusIO](https://github.com/adafruit/Adafruit_BusIO)
@@ -53,11 +67,11 @@ Coming Soon....
 
 
 ## Tags
-* [v0](https://github.com/user/Project/releases/tag/V0) Coming Soon....
+* [v1](https://github.com/failbreak/H3-IOT/releases/tag/V1) Coming Soon....
 
 
 ## Changelog
-[Github](https://github.com/user/project/commit) Coming Soon....
+[Github](https://github.com/failbreak/H3-IOT/commit) Coming Soon....
 
 
 
@@ -65,7 +79,7 @@ Coming Soon....
 
 ## To-do
 
-* Coming Soon....
+* Combined menu with temp and humidity.
 
 ## Contributions
 Elias who helped me understand why and how i did things wrong
