@@ -67,7 +67,7 @@ the one on the left is scrolling through menu.
 
 
 ## Tags
-* [v1](https://github.com/failbreak/H3-IOT/releases/tag/V1) Coming Soon....
+* [v1](https://github.com/failbreak/H3-IOT/releases/tag/v1.0.0)
 
 
 ## Changelog
