@@ -36,7 +36,7 @@ the one on the left is scrolling through menu.
 
 | Platform      |    Language   | projectVersion| 
 | ------------- | ------------- | ------------- |
-|    Arduino    |    c/c++ gnu  |       0.0.1     |
+|    Arduino    |    c/c++ gnu  |       1.0.1     |
 | ------------- | ------------- | ------------- |
 
 
