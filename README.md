@@ -64,8 +64,10 @@ the one on the left is scrolling through menu.
 [Arduino](https://www.arduino.cc/en/software)
 <br/>
 [EasyButton](https://easybtn.earias.me)
-
-
+<br/>
+[RTCLIB](https://github.com/adafruit/RTClib)
+<br/>
+SPI.H
 ## Tags
 * [v1](https://github.com/failbreak/H3-IOT/releases/tag/v1.0.0)
 
