@@ -97,7 +97,7 @@ case 0:
 	display.setCursor(1,1); // Start at top-left corner
   Serial.println("case 1");
  display.clearDisplay();
-  temp();
+  hum();
   display.display();
   break;
     case 2:
@@ -170,6 +170,9 @@ if (isnan(h)) {
     Serial.println(F("Failed to read from DHT sensor!"));
     return;
 }
+display.print(F("Humidity: "));
+  display.print(h);
+  delay(2000);
 }
 // Easy button functions
 
